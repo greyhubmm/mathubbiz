@@ -1,0 +1,42 @@
+export default function HomePage() {
+  return (
+    <main className="bg-white text-gray-900 p-4 space-y-8">
+      {/* Hero Section */}
+      <section className="text-center py-10 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-2xl shadow-lg">
+        <h1 className="text-4xl font-bold mb-2">Welcome to Mathub Biz</h1>
+        <p className="text-lg">A Hybrid Platform Bridging Online, Offline & Web3 Services</p>
+        <button className="mt-4 px-6 py-2 bg-white text-purple-700 rounded-xl font-semibold hover:bg-gray-100">Explore Services</button>
+      </section>
+
+      {/* Services Overview */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { title: 'Men’s Fashion', emoji: '🧥' },
+          { title: 'Unisex Salon', emoji: '💇‍♀️' },
+          { title: 'Entertainment Hub', emoji: '🎮' },
+          { title: 'Real Estate', emoji: '🏘️' },
+          { title: 'Farm & Produce', emoji: '🐓' },
+          { title: 'Electronics & Repair', emoji: '🔧' }
+        ].map(service => (
+          <div key={service.title} className="bg-gray-100 p-6 rounded-2xl shadow">
+            <div className="text-3xl mb-2">{service.emoji}</div>
+            <h2 className="text-xl font-bold mb-1">{service.title}</h2>
+            <p className="text-sm text-gray-600">Learn more about our {service.title.toLowerCase()} offerings.</p>
+          </div>
+        ))}
+      </section>
+
+      {/* Web3 Integration */}
+      <section className="bg-indigo-50 p-6 rounded-xl">
+        <h2 className="text-2xl font-bold mb-2">Bringing Real Life Onchain 🌐</h2>
+        <p className="text-gray-700">From booking salon appointments to buying farm produce — all possible with KOPO Wallet and MATH tokens.</p>
+      </section>
+
+      {/* Call to Action */}
+      <section className="text-center py-8">
+        <h3 className="text-xl font-bold mb-2">Ready to Experience Mathub Biz?</h3>
+        <button className="bg-purple-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-purple-800">Join Now</button>
+      </section>
+    </main>
+  );
+}
